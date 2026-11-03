@@ -1,4 +1,12 @@
 from django.shortcuts import render
+from .models import Property
 
 def home(request):
-    return render(request, 'properties/home.html')
+
+    properties = Property.objects.all()
+
+    context = {
+        'properties': properties
+    }
+
+    return render(request, 'index.html', context)
