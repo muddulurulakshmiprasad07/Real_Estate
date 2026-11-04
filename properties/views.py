@@ -3,14 +3,15 @@ from django.contrib import messages
 from .models import Property
 
 
-# Home page
 def home(request):
     properties = Property.objects.all().order_by('-created_at')
 
     search = request.GET.get('search')
 
     if search:
-        properties = properties.filter(location__icontains=search)
+        properties = properties.filter(
+            location__icontains=search
+        )
 
     return render(request, 'index.html', {
         'properties': properties
