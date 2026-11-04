@@ -1,0 +1,65 @@
+
+/* PROPERTY ACTION BUTTONS */
+
+.property-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.property-buttons a {
+    flex: 1;
+    text-align: center;
+    padding: 11px 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.view-btn {
+    background: #153d35;
+    color: white;
+}
+
+.buy-btn {
+    background: #d5a34b;
+    color: white;
+    display: inline-block;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.contact-btn {
+    background: #e9efeb;
+    color: #153d35;
+    display: inline-block;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.detail-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.detail-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.detail-info {
+    padding: 25px 0;
+    line-height: 2;
+}
+
+.detail-info h1 {
+    color: #153d35;
+    font-size: 35px;
+}

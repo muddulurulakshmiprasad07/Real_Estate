@@ -135,3 +135,11 @@ INSTALLED_APPS = [
 
     'properties',
 ]
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+LOGIN_URL = 'user_login'
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGOUT_REDIRECT_URL = 'user_login'

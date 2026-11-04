@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ request.user.first_name|default:request.user.username }}!</h1>
+
+    <h3>You are successfully logged in.</h3>
+
+    <a href="{% url 'home' %}">Browse Properties</a>
+
+    <form method="POST" action="{% url 'user_logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>
