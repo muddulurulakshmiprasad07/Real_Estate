@@ -127,6 +127,8 @@ MAILERS = {
     },
 }
 INSTALLED_APPS = [
+    'jazzmin',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -155,3 +157,33 @@ LOGOUT_REDIRECT_URL = '/login/'
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
+JAZZMIN_SETTINGS = {
+    "site_title": "DreamHomes Admin",
+    "site_header": "DreamHomes",
+    "site_brand": "DreamHomes",
+    "welcome_sign": "Welcome to DreamHomes",
+    "copyright": "DreamHomes Real Estate",
+
+    "search_model": ["properties.Property"],
+
+    "show_ui_builder": True,
+    "navigation_expanded": True,
+
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "properties": "fas fa-building",
+        "properties.property": "fas fa-house",
+    },
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "darkly",
+    "dark_mode_theme": "darkly",
+    "navbar": "navbar-dark",
+    "sidebar": "sidebar-dark-primary",
+    "brand_colour": "navbar-dark",
+    "accent": "accent-info",
+    "sidebar_nav_compact_style": True,
+    "sidebar_nav_flat_style": True,
+}
