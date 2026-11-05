@@ -187,3 +187,35 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar_nav_compact_style": True,
     "sidebar_nav_flat_style": True,
 }
+JAZZMIN_SETTINGS = {
+    "site_title": "DreamHomes Admin",
+    "site_header": "DreamHomes",
+    "site_brand": "DreamHomes",
+    "welcome_sign": "Welcome to Real Estate Management",
+
+    "order_with_respect_to": [
+        "properties",
+        "properties.property",
+        "auth",
+        "auth.user",
+        "auth.group",
+    ],
+
+    "icons": {
+        "properties": "fas fa-building",
+        "properties.property": "fas fa-house",
+        "auth": "fas fa-users",
+        "auth.user": "fas fa-user",
+        "auth.group": "fas fa-users-cog",
+    },
+}
+INSTALLED_APPS = [
+    "jazzmin",
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "properties",
+]
