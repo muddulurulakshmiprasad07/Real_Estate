@@ -98,7 +98,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+'django.contrib.sessions.middleware.SessionMiddleware',
+'django.contrib.auth.middleware.AuthenticationMiddleware',
 # Internationalization
 # https://docs.djangoproject.com/en/6.1/topics/i18n/
 
@@ -143,3 +144,14 @@ STATICFILES_DIRS = [
 LOGIN_URL = 'user_login'
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'user_login'
+LOGIN_URL = '/login/'
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/login/'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
