@@ -63,3 +63,29 @@
     color: #153d35;
     font-size: 35px;
 }
+body {
+    margin: 0;
+    padding: 30px;
+    background: #f4f6f8;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #172554;
+    font-size: 32px;
+}
+
+img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+a {
+    background: #172554;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 6px;
+}

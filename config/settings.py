@@ -219,3 +219,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "properties",
 ]
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
