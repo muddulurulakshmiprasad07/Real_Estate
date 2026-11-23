@@ -1,41 +1,14 @@
-<section id="properties">
-    <h2>Featured Properties</h2>
+<div class="owner-contact">
 
-    <div class="property-container">
-        {% for property in properties %}
+    <a href="tel:8317650526{{ property.owner_phone }}"
+       class="call-btn">
+       Call Owner
+    </a>
 
-        <div class="property-card">
+    <a href="https://wa.me/8317650526{{ property.owner_whatsapp }}"
+       class="whatsapp-btn"
+       target="_blank">
+       WhatsApp Owner
+    </a>
 
-            <img src="{{ property.image }}"
-                 alt="{{ property.title }}"
-                 width="300">
-
-            <h3>{{ property.title }}</h3>
-
-            <p>Location: {{ property.location }}</p>
-
-            <p>Price: ₹{{ property.price }}</p>
-
-            <p>Bedrooms: {{ property.bedrooms }}</p>
-
-            <p>Bathrooms: {{ property.bathrooms }}</p>
-
-            <a href="{% url 'property_detail' property.id %}">
-                View Details
-            </a>
-
-            <a href="{% url 'buy_property' property.id %}">
-                Buy Now
-            </a>
-
-            <a href="{% url 'contact_owner' property.id %}">
-                Contact Owner
-            </a>
-
-        </div>
-
-        {% empty %}
-            <p>No properties available. Please add properties from Admin.</p>
-        {% endfor %}
-    </div>
-</section>
+</div>

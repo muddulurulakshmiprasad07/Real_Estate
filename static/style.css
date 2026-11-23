@@ -89,3 +89,32 @@ a {
     text-decoration: none;
     border-radius: 6px;
 }
+.owner-contact {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.owner-contact a {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+}
+
+.call-btn {
+    background: #172554;
+}
+
+.whatsapp-btn {
+    background: #128C7E;
+}
+
+.owner-contact a:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}

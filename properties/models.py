@@ -29,3 +29,24 @@ class Property(models.Model):
 
     def __str__(self):
         return self.title
+owner_name = models.CharField(
+    max_length=100,
+    blank=True
+)
+
+owner_phone = models.CharField(
+    max_length=15,
+    blank=True
+)
+
+owner_whatsapp = models.CharField(
+    max_length=15,
+    blank=True
+)
+
+owner_email = models.EmailField(
+    blank=True
+)
+owner_name = models.CharField(max_length=100)
+owner_phone = models.CharField(max_length=15)
+owner_whatsapp = models.CharField(max_length=15)
