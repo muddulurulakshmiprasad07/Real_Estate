@@ -4,8 +4,8 @@ from django.db import models
 
 class Property(models.Model):
 
+    # Property information
     title = models.CharField(max_length=200)
-
     location = models.CharField(max_length=200)
 
     price = models.DecimalField(
@@ -14,39 +14,36 @@ class Property(models.Model):
     )
 
     bedrooms = models.IntegerField()
-
     bathrooms = models.IntegerField()
-
     area = models.IntegerField()
 
     image = models.URLField(blank=True)
-
     description = models.TextField()
 
+    # Owner information
+    owner_name = models.CharField(
+        max_length=100,
+        blank=True
+    )
+
+    owner_phone = models.CharField(
+        max_length=15,
+        blank=True
+    )
+
+    owner_whatsapp = models.CharField(
+        max_length=15,
+        blank=True
+    )
+
+    owner_email = models.EmailField(
+        blank=True
+    )
+
+    # Date
     created_at = models.DateTimeField(
         auto_now_add=True
     )
 
     def __str__(self):
         return self.title
-owner_name = models.CharField(
-    max_length=100,
-    blank=True
-)
-
-owner_phone = models.CharField(
-    max_length=15,
-    blank=True
-)
-
-owner_whatsapp = models.CharField(
-    max_length=15,
-    blank=True
-)
-
-owner_email = models.EmailField(
-    blank=True
-)
-owner_name = models.CharField(max_length=100)
-owner_phone = models.CharField(max_length=15)
-owner_whatsapp = models.CharField(max_length=15)
