@@ -18,6 +18,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: #080b0a;
             color: white;
@@ -30,12 +34,12 @@
         }
 
         .navbar {
-            height: 85px;
-            padding: 0 7%;
+            min-height: 85px;
+            padding: 15px 7%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(8, 11, 10, .96);
+            background: #080b0a;
             border-bottom: 1px solid #292d27;
         }
 
@@ -185,6 +189,7 @@
             width: 100%;
             height: 245px;
             object-fit: cover;
+            display: block;
         }
 
         .property-info {
@@ -207,7 +212,14 @@
             color: #d7b875;
             font-size: 20px;
             font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .property-features {
+            color: #aaa;
+            font-size: 12px;
             margin-bottom: 20px;
+            line-height: 2;
         }
 
         .card-btn {
@@ -216,13 +228,19 @@
             color: #d7b875;
             padding: 11px 17px;
             font-size: 12px;
+            transition: .3s;
+        }
+
+        .card-btn:hover {
+            background: #c9a96e;
+            color: #111;
         }
 
         .empty {
             text-align: center;
             color: #bbb;
             padding: 35px;
-            grid-column: 1/-1;
+            grid-column: 1 / -1;
         }
 
         .about {
@@ -235,6 +253,13 @@
             margin: 20px auto 0;
             color: #aaa;
             line-height: 1.9;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         footer {
@@ -292,6 +317,7 @@
 <body>
 
 <header class="navbar">
+
     <div class="logo">DreamHomes.</div>
 
     <nav class="nav-links">
@@ -302,13 +328,20 @@
     </nav>
 
     <a href="/admin/" class="nav-contact">Admin Portal</a>
+
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <div class="eyebrow">DREAMHOMES PRASAD PRESENTS</div>
 
-        <h1>Discover Your <span>Dream</span> Home.</h1>
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            DREAMHOMES PRASAD PRESENTS
+        </div>
+
+        <h1>
+            Discover Your <span>Dream</span> Home.
+        </h1>
 
         <p>
             Experience exceptional living with carefully selected
@@ -319,10 +352,13 @@
         <a href="#properties" class="gold-btn">
             EXPLORE PROPERTIES →
         </a>
+
     </div>
+
 </section>
 
 <section class="stats">
+
     <div class="stat">
         <h2>Luxury</h2>
         <p>PREMIUM COLLECTION</p>
@@ -337,13 +373,17 @@
         <h2>Dreams</h2>
         <p>YOUR NEXT HOME</p>
     </div>
+
 </section>
 
 <section class="section" id="properties">
 
     <div class="section-heading">
+
         <small>EXPLORE OUR COLLECTION</small>
+
         <h2>Featured Properties</h2>
+
     </div>
 
     <div class="property-grid">
@@ -353,9 +393,19 @@
         <article class="property-card">
 
             {% if property.image %}
-                <img src="{{ property.image.url }}" alt="{{ property.title }}">
+
+                <img
+                    src="{{ property.image }}"
+                    alt="{{ property.title }}"
+                >
+
             {% else %}
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Luxury property">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+                    alt="Luxury property"
+                >
+
             {% endif %}
 
             <div class="property-info">
@@ -370,29 +420,50 @@
                     ₹ {{ property.price }}
                 </div>
 
-                <a href="{% url 'property_detail' property.id %}" class="card-btn">
-                    VIEW DETAILS →
-                </a>
+                <div class="property-features">
+                    🛏 {{ property.bedrooms }} Bedrooms
+                    &nbsp; | &nbsp;
+                    🛁 {{ property.bathrooms }} Bathrooms
+                    <br>
+                    📐 {{ property.area }} Sq. Ft.
+                </div>
+
+                {% if property.id %}
+                    <a
+                        href="{% url 'property_detail' property.id %}"
+                        class="card-btn"
+                    >
+                        VIEW DETAILS →
+                    </a>
+                {% endif %}
 
             </div>
+
         </article>
 
         {% empty %}
 
         <div class="empty">
             <h3>Properties Coming Soon</h3>
-            <p>Our premium property collection will appear here.</p>
+            <p>
+                Our premium property collection will appear here.
+            </p>
         </div>
 
         {% endfor %}
 
     </div>
+
 </section>
 
 <section class="section about" id="about">
+
     <div class="section-heading">
+
         <small>OUR VISION</small>
+
         <h2>More Than Just A Property</h2>
+
     </div>
 
     <p>
@@ -400,33 +471,47 @@
         that match your lifestyle, dreams and aspirations.
         Find your perfect place with us.
     </p>
+
 </section>
 
 <section class="section" id="contact">
+
     <div class="section-heading">
+
         <small>GET IN TOUCH</small>
+
         <h2>Let's Find Your Dream Home</h2>
-        <p style="color:#aaa;margin-top:15px">
+
+        <p style="color:#aaa; margin-top:15px">
             Contact our property team for assistance.
         </p>
+
     </div>
 
-    <div style="text-align:center">
-        <a href="tel:8317650526" class="gold-btn">CALL OWNER</a>
-        <a href="https://wa.me/918317650526"
-           class="card-btn"
-           target="_blank" rel="noopener">
-           WHATSAPP OWNER
+    <div class="contact-buttons">
+
+        <a href="tel:8317650526" class="gold-btn">
+            CALL OWNER
         </a>
+
+        <a
+            href="https://wa.me/918317650526"
+            class="card-btn"
+            target="_blank"
+            rel="noopener"
+        >
+            WHATSAPP OWNER
+        </a>
+
     </div>
+
 </section>
 
 <footer>
+
     © 2026 DreamHomes Prasad. All Rights Reserved.
+
 </footer>
 
 </body>
 </html>
-<a href="{% url 'property_detail' property.id %}">
-    View Details
-</a>
