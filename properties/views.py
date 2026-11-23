@@ -11,16 +11,11 @@ from .models import Property
 
 # PUBLIC HOME PAGE
 def home(request):
-    properties = Property.objects.all().order_by('-created_at')
+    properties = Property.objects.all().order_by("-created_at")
 
-    search = request.GET.get('search')
-    if search:
-        properties = properties.filter(location__icontains=search)
-
-    return render(request, 'index.html', {
-        'properties': properties
+    return render(request, "index.html", {
+        "properties": properties
     })
-
 
 # REGISTER
 def register(request):
