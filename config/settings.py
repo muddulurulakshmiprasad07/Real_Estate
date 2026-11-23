@@ -19,9 +19,12 @@ ALLOWED_HOSTS = os.environ.get(
 ).split(",")
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://" + host.strip()
-    for host in ALLOWED_HOSTS
-    if host.strip().endswith(".onrender.com")
+    origin.strip()
+    for origin in os.environ.get(
+        "CSRF_TRUSTED_ORIGINS",
+        ""
+    ).split(",")
+    if origin.strip()
 ]
 
 # Applications
