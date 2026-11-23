@@ -17,3 +17,13 @@ urlpatterns = [
     path('contact/<int:property_id>/',
          views.contact_owner, name='contact_owner'),
 ]
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path(
+        'property/<int:property_id>/',
+        views.property_detail,
+        name='property_detail'
+    ),
+]
