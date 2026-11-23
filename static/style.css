@@ -118,3 +118,128 @@ a {
     transform: translateY(-3px);
     opacity: 0.9;
 }
+
+/* CINEMATIC PREMIUM FOOTER */
+
+footer {
+    position: relative;
+    overflow: hidden;
+    padding: 85px 8% 25px;
+    background:
+        linear-gradient(
+            135deg,
+            #111613 0%,
+            #080b0a 55%,
+            #17130b 100%
+        );
+    border-top: 1px solid rgba(215, 184, 117, 0.35);
+    text-align: center;
+}
+
+.footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 7vw, 76px);
+    font-weight: 700;
+    letter-spacing: 8px;
+    color: #d7b875;
+    margin-bottom: 12px;
+    text-shadow: 0 0 25px rgba(215, 184, 117, 0.2);
+}
+
+.footer-tagline {
+    color: #ffffff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 4vw, 38px);
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.footer-description {
+    color: #aaa;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.footer-links a {
+    color: #ddd;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: #d7b875;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 30px 0;
+}
+
+.footer-social a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #8e7446;
+    border-radius: 50%;
+    color: #d7b875;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.footer-social a:hover {
+    background: #c9a96e;
+    color: #080b0a;
+    transform: translateY(-5px);
+}
+
+.footer-divider {
+    max-width: 900px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #b99b5e,
+        transparent
+    );
+    margin: 35px auto 25px;
+}
+
+.footer-bottom {
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+.footer-highlight {
+    color: #d7b875;
+}
+
+@media(max-width: 600px) {
+    footer {
+        padding: 65px 6% 22px;
+    }
+
+    .footer-brand {
+        letter-spacing: 4px;
+    }
+
+    .footer-links {
+        gap: 18px;
+    }
+}
