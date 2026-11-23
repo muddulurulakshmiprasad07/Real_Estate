@@ -9,8 +9,7 @@ from .forms import RegisterForm
 from .models import Property
 
 
-# HOME PAGE
-@login_required(login_url='/login/')
+# PUBLIC HOME PAGE
 def home(request):
     properties = Property.objects.all().order_by('-created_at')
 
@@ -50,7 +49,7 @@ def user_login(request):
     return render(request, 'login.html', {'form': form})
 
 
-# USER DASHBOARD
+# PRIVATE USER DASHBOARD
 @login_required(login_url='/login/')
 def dashboard(request):
     return render(request, 'dashboard.html')
@@ -66,10 +65,10 @@ def user_logout(request):
     return redirect('dashboard')
 
 
-# PROPERTY DETAILS
-@login_required(login_url='/login/')
+# PUBLIC PROPERTY DETAILS
 def property_detail(request, property_id):
     property = get_object_or_404(Property, id=property_id)
+
     return render(request, 'property_detail.html', {
         'property': property
     })
@@ -90,7 +89,6 @@ def buy_property(request, property_id):
 
 
 # CONTACT OWNER
-@login_required(login_url='/login/')
 def contact_owner(request, property_id):
     property = get_object_or_404(Property, id=property_id)
 
